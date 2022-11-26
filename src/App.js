@@ -1,24 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import Classic from "./components/Classic";
+import Ballon from "./components/Ballon";
+import BallonBlock from "./components/BallonBlock";
+import Inline from "./components/Inline";
+import DeCouppled from "./components/DeCouppled";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Classic />} />
+        <Route path="/ballon" element={<Ballon />} />
+        <Route path="/ballonblock" element={<BallonBlock />} />
+        <Route path="/inline" element={<Inline />} />
+        <Route path="/decouppled" element={<DeCouppled />} />
+      </Routes>
+      </BrowserRouter>
+    </>
   );
 }
 
